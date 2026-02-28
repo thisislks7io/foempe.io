@@ -1,14 +1,12 @@
 /* ============================= */
 /* FARBVARIABLEN */
 /* ============================= */
-/* Zentrale Farbdefinitionen für einfache Anpassungen */
+/* Light Mode (Default) */
 :root {
-  /* Light Mode (Standard) */
   --background-color: #ffffff;
   --text-color: #000000;
   --muted-color: #666666;
 
-  /* UI-Details */
   --border-color: rgba(0, 0, 0, 0.15);
   --border-color-hover: rgba(0, 0, 0, 0.35);
 
@@ -17,21 +15,31 @@
 }
 
 /* ============================= */
-/* DARK MODE: AUTOMATISCH */
+/* DARK MODE (AUTOMATISCH) */
 /* ============================= */
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #0b0b0c;
     --text-color: #ffffff;
-    --muted-color: rgba(255, 255, 255, 0.70);
+    --muted-color: rgba(255, 255, 255, 0.7);
 
     --border-color: rgba(255, 255, 255, 0.18);
     --border-color-hover: rgba(255, 255, 255, 0.35);
 
-    --glass-bg: rgba(10, 10, 12, 0.55);
-    --glass-bg-hover: rgba(10, 10, 12, 0.75);
+    --glass-bg: rgba(12, 12, 14, 0.6);
+    --glass-bg-hover: rgba(12, 12, 14, 0.8);
   }
 }
+
+/* ============================= */
+/* RESET */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ============================= */
 /* GRUNDLAYOUT */
 /* ============================= */
@@ -41,7 +49,6 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
 
-  /* Moderne, systemnahe Schrift */
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -53,9 +60,8 @@ body {
 }
 
 /* ============================= */
-/* ZENTRIERTER HAUPTBEREICH (STARTSEITE) */
+/* STARTSEITE – ZENTRIERUNG */
 /* ============================= */
-/* Zentriert das Logo exakt horizontal & vertikal */
 .center {
   height: 100%;
   display: flex;
@@ -70,13 +76,11 @@ body {
   width: 220px;
   max-width: 70vw;
 
-  /* Sanfte Hover-Animation */
   transition:
     transform 0.35s ease,
     opacity 0.35s ease;
 }
 
-/* Hover: dezentes Zoomen */
 .logo:hover {
   transform: scale(1.05);
   opacity: 0.85;
@@ -85,15 +89,12 @@ body {
 /* ============================= */
 /* FADE-IN BEIM LADEN */
 /* ============================= */
-
-/* Startzustand */
 .fade-in {
   opacity: 0;
   transform: translateY(6px);
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Keyframes für den Effekt */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -101,7 +102,7 @@ body {
   }
 }
 
-/* Accessibility: Bewegung reduzieren */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .fade-in {
     animation: none;
@@ -125,19 +126,17 @@ footer {
   font-size: 12px;
 }
 
-/* Footer-Links */
 footer a {
   color: var(--muted-color);
   text-decoration: none;
 }
 
-/* Hover für Footer-Links */
 footer a:hover {
   color: var(--text-color);
 }
 
 /* ============================= */
-/* ZURÜCK-BUTTON (IMPRESSUM / DATENSCHUTZ) */
+/* ZURÜCK-BUTTON (LEGAL SEITEN) */
 /* ============================= */
 .back {
   position: fixed;
@@ -168,7 +167,6 @@ footer a:hover {
     background-color 0.2s ease;
 }
 
-/* Hover-Effekt für Zurück-Button */
 .back:hover {
   transform: translateY(-1px);
   border-color: var(--border-color-hover);
@@ -176,26 +174,33 @@ footer a:hover {
 }
 
 /* ============================= */
-/* LAYOUT FÜR RECHTLICHE SEITEN */
+/* LEGAL SEITEN (IMPRESSUM / DSGVO) */
 /* ============================= */
-/* Sauberer, lesbarer Content-Bereich */
 .legal {
   width: min(720px, calc(100% - 48px));
   margin: 0 auto;
-
-  padding: 96px 0 64px; /* Platz für Zurück-Button oben */
+  padding: 96px 0 64px;
 
   font-size: 14px;
   line-height: 1.7;
 }
 
-/* Überschrift */
 .legal h1 {
   font-size: 22px;
   margin-bottom: 18px;
 }
 
-/* Absätze */
 .legal p {
   margin-bottom: 14px;
+}
+
+/* Links auf Legal-Seiten */
+.legal a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.35);
+}
+
+.legal a:hover {
+  border-bottom-color: rgba(127, 127, 127, 0.75);
 }
