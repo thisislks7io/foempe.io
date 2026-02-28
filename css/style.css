@@ -83,6 +83,34 @@ body {
 }
 
 /* ============================= */
+/* FADE-IN BEIM LADEN */
+/* ============================= */
+
+/* Startzustand */
+.fade-in {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Keyframes für den Effekt */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility: Bewegung reduzieren */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================= */
 /* FOOTER (STARTSEITE) */
 /* ============================= */
 footer {
