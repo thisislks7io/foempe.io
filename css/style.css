@@ -1,6 +1,7 @@
 /* ============================= */
 /* FARBVARIABLEN */
 /* ============================= */
+/* Zentrale Farbdefinitionen für einfache Anpassungen */
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
@@ -10,7 +11,7 @@
 /* ============================= */
 /* RESET */
 /* ============================= */
-/* Entfernt Standardabstände des Browsers */
+/* Entfernt Standardabstände und sorgt für saubere Basis */
 * {
   margin: 0;
   padding: 0;
@@ -20,12 +21,13 @@
 /* ============================= */
 /* GRUNDLAYOUT */
 /* ============================= */
-html, body {
+html,
+body {
   height: 100%;
   background-color: var(--background-color);
   color: var(--text-color);
 
-  /* Moderne Systemschrift */
+  /* Moderne, systemnahe Schrift */
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -37,13 +39,14 @@ html, body {
 }
 
 /* ============================= */
-/* ZENTRIERTER HAUPTBEREICH */
+/* ZENTRIERTER HAUPTBEREICH (STARTSEITE) */
 /* ============================= */
+/* Zentriert das Logo exakt horizontal & vertikal */
 .center {
   height: 100%;
   display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     /* vertikal */
+  justify-content: center;
+  align-items: center;
 }
 
 /* ============================= */
@@ -51,21 +54,22 @@ html, body {
 /* ============================= */
 .logo {
   width: 220px;
+  max-width: 70vw;
 
-  /* Weiche Hover-Animation */
+  /* Sanfte Hover-Animation */
   transition:
     transform 0.35s ease,
     opacity 0.35s ease;
 }
 
-/* Hover-Effekt */
+/* Hover: dezentes Zoomen */
 .logo:hover {
   transform: scale(1.05);
   opacity: 0.85;
 }
 
 /* ============================= */
-/* FOOTER */
+/* FOOTER (STARTSEITE) */
 /* ============================= */
 footer {
   position: fixed;
@@ -88,4 +92,68 @@ footer a {
 /* Hover für Footer-Links */
 footer a:hover {
   color: var(--text-color);
+}
+
+/* ============================= */
+/* ZURÜCK-BUTTON (IMPRESSUM / DATENSCHUTZ) */
+/* ============================= */
+.back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+
+  color: var(--text-color);
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Hover-Effekt für Zurück-Button */
+.back:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================= */
+/* LAYOUT FÜR RECHTLICHE SEITEN */
+/* ============================= */
+/* Sauberer, lesbarer Content-Bereich */
+.legal {
+  width: min(720px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 96px 0 64px; /* Platz für Zurück-Button oben */
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Überschrift */
+.legal h1 {
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+/* Absätze */
+.legal p {
+  margin-bottom: 14px;
 }
