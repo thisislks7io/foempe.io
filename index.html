@@ -36,11 +36,17 @@
     <!-- LOGO -->
     <!-- ============================= -->
     <!-- Schwarzes Logo auf weißem Hintergrund -->
-    <img
-      src="assets/logo-black.png"
-      alt="foempe Logo"
-      class="logo"
-    >
+    <picture>
+      <!-- Wenn Dark Mode aktiv ist, nutze das weiße Logo -->
+      <source srcset="assets/logo-white.png" media="(prefers-color-scheme: dark)">
+
+      <!-- Fallback / Light Mode: schwarzes Logo -->
+        <img
+        src="assets/logo-black.png"
+        alt="foempe Logo"
+        class="logo"
+  >
+</picture>
 
   </main>
 
