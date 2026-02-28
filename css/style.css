@@ -1,1 +1,91 @@
+/* ============================= */
+/* FARBVARIABLEN */
+/* ============================= */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --muted-color: #666666;
+}
 
+/* ============================= */
+/* RESET */
+/* ============================= */
+/* Entfernt Standardabstände des Browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* GRUNDLAYOUT */
+/* ============================= */
+html, body {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  /* Moderne Systemschrift */
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+/* ============================= */
+/* ZENTRIERTER HAUPTBEREICH */
+/* ============================= */
+.center {
+  height: 100%;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertikal */
+}
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+.logo {
+  width: 220px;
+
+  /* Weiche Hover-Animation */
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* Hover-Effekt */
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+  position: fixed;
+  bottom: 24px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  font-size: 12px;
+}
+
+/* Footer-Links */
+footer a {
+  color: var(--muted-color);
+  text-decoration: none;
+}
+
+/* Hover für Footer-Links */
+footer a:hover {
+  color: var(--text-color);
+}
