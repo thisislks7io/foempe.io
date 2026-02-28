@@ -3,21 +3,35 @@
 /* ============================= */
 /* Zentrale Farbdefinitionen für einfache Anpassungen */
 :root {
+  /* Light Mode (Standard) */
   --background-color: #ffffff;
   --text-color: #000000;
   --muted-color: #666666;
+
+  /* UI-Details */
+  --border-color: rgba(0, 0, 0, 0.15);
+  --border-color-hover: rgba(0, 0, 0, 0.35);
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
 }
 
 /* ============================= */
-/* RESET */
+/* DARK MODE: AUTOMATISCH */
 /* ============================= */
-/* Entfernt Standardabstände und sorgt für saubere Basis */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0b0b0c;
+    --text-color: #ffffff;
+    --muted-color: rgba(255, 255, 255, 0.70);
 
+    --border-color: rgba(255, 255, 255, 0.18);
+    --border-color-hover: rgba(255, 255, 255, 0.35);
+
+    --glass-bg: rgba(10, 10, 12, 0.55);
+    --glass-bg-hover: rgba(10, 10, 12, 0.75);
+  }
+}
 /* ============================= */
 /* GRUNDLAYOUT */
 /* ============================= */
@@ -114,10 +128,10 @@ footer a:hover {
 
   color: var(--text-color);
 
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(6px);
 
   transition:
@@ -129,8 +143,8 @@ footer a:hover {
 /* Hover-Effekt für Zurück-Button */
 .back:hover {
   transform: translateY(-1px);
-  border-color: rgba(0, 0, 0, 0.35);
-  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--border-color-hover);
+  background: var(--glass-bg-hover);
 }
 
 /* ============================= */
