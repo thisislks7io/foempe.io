@@ -2,25 +2,17 @@
 <html lang="de">
 <head>
   <!-- ============================= -->
-  <!-- GRUNDLEGENDES HTML-DOKUMENT -->
+  <!-- BASIS -->
   <!-- ============================= -->
-
-  <!-- Zeichencodierung (Umlaute etc.) -->
   <meta charset="UTF-8">
-
-  <!-- Mobile Optimierung -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Titel im Browser-Tab -->
   <title>foempe.io</title>
 
-  <!-- Beschreibung für Suchmaschinen -->
   <meta name="description" content="foempe.io – minimal, modern, technology driven">
-
-  <!-- Suchmaschinen dürfen indexieren -->
   <meta name="robots" content="index, follow">
 
-  <!-- Verbindung zur CSS-Datei -->
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,25 +21,26 @@
   <!-- ============================= -->
   <!-- HAUPTBEREICH -->
   <!-- ============================= -->
-  <!-- Zentriert das Logo horizontal und vertikal -->
+  <!-- Logo zentriert, mit Fade-In -->
   <main class="center">
 
     <!-- ============================= -->
-    <!-- LOGO -->
+    <!-- LOGO (SVG) -->
+    <!-- - automatisch Light / Dark -->
     <!-- - Fade-In beim Laden -->
-    <!-- - Automatischer Wechsel Light / Dark -->
     <!-- ============================= -->
     <picture class="fade-in">
-      <!-- Dark Mode: weißes Logo -->
+      <!-- Dark Mode: weißes SVG -->
       <source
-        srcset="assets/logo-white.png"
+        srcset="assets/logo-white.svg"
         media="(prefers-color-scheme: dark)"
+        type="image/svg+xml"
       >
 
-      <!-- Light Mode / Fallback: schwarzes Logo -->
+      <!-- Light Mode / Fallback: schwarzes SVG -->
       <img
-        src="assets/logo-black.png"
-        alt="foempe Logo"
+        src="assets/logo-black.svg"
+        alt="LF – foempe.io"
         class="logo"
       >
     </picture>
@@ -57,7 +50,6 @@
   <!-- ============================= -->
   <!-- FOOTER -->
   <!-- ============================= -->
-  <!-- Rechtlich notwendige Links -->
   <footer>
     <a href="impressum.html">Impressum</a>
     <a href="datenschutz.html">Datenschutz</a>
